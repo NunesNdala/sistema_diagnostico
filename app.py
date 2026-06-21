@@ -198,7 +198,7 @@ def load_dataset():
     dataset_path = BASE_DIR / "kidney_clean.csv"
     if not dataset_path.exists():
         return None
-    df = pd.read_csv(dataset_path, sep=";", encoding="utf-8-sig")
+    df = pd.read_csv(dataset_path, sep=None, engine="python", encoding="utf-8-sig")
     df.columns = df.columns.str.strip().str.lower()
     return df
 
