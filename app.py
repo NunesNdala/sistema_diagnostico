@@ -198,7 +198,7 @@ def load_dataset():
     dataset_path = BASE_DIR / "kidney_clean.csv"
     if not dataset_path.exists():
         return None
-    return pd.read_csv(dataset_path)
+    return pd.read_csv(dataset_path, sep=";")
 
 
 def prepare_dataset(raw_df, scaler):
